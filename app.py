@@ -18,7 +18,7 @@ def index():
     return "<h1>Home Page</h1>"
 
 
-@app.route('/search/', methods=['GET'])
+@app.route('/search', methods=['GET'])
 def search():
     # Retrieve the name from url parameter
     stock = request.args.get("stock", None)

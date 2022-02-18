@@ -1,8 +1,7 @@
 from flask import Flask, request, jsonify
-app = Flask(__name__)
 import requests
 from bs4 import BeautifulSoup
-
+app = Flask(__name__)
 
 headers = {
         'Access-Control-Allow-Origin': '*',
@@ -47,4 +46,4 @@ def search():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

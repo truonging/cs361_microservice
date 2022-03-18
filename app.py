@@ -20,7 +20,6 @@ def index():
 
 @app.route('/search', methods=['GET'])
 def search():
-    # Retrieve the name from url parameter
     stock = request.args.get("stock", None)
     print(f"got stock {stock}")
 
@@ -32,16 +31,12 @@ def search():
     print(price)
 
     response = {}
-    # Check if user sent a stock at all
     if not stock:
         response["ERROR"] = "no name found, please send a name."
-    # Check if the user entered a number not a stock
     elif str(stock).isdigit():
         response["ERROR"] = "name can't be numeric."
-    # Now the user entered a valid stock
     else:
         response["stock_price"] = f"{price}"
-    # Return the response in json format
     return jsonify(response)
 
 
